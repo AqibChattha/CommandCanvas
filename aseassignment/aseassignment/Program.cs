@@ -11,7 +11,8 @@ namespace aseassignment
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            try { Application.Run(new Form1()); } catch (Exception) { try { } catch (Exception) { } }
+            // double catch the object already in use exception
+            try { Application.Run(new Form1()); } catch (Exception) { }
         }
     }
 }
