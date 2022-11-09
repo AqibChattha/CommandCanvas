@@ -12,7 +12,7 @@ namespace aseassignment
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             // double catch the object already in use exception
-            try { Application.Run(new Form1()); } catch (Exception) { }
+            Application.Run(new Form1());
         }
     }
 }
