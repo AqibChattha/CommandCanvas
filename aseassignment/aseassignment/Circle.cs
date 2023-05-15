@@ -9,7 +9,7 @@ namespace aseassignment
     /// <summary>
     /// The circle class. It inherits from the shape class. It draws the circle on the canvas.
     /// </summary>
-    class Circle : Shape
+    public class Circle : Shape
     {
         // The radius of the circle.
         int radius;

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbOutput = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCommandLine = new System.Windows.Forms.TextBox();
             this.rtbInput = new System.Windows.Forms.RichTextBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnSyntax = new System.Windows.Forms.Button();
@@ -43,7 +44,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.pbColor3 = new System.Windows.Forms.PictureBox();
+            this.pbColor2 = new System.Windows.Forms.PictureBox();
+            this.pbColor1 = new System.Windows.Forms.PictureBox();
+            this.tColorTransition = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbOutput
@@ -52,22 +60,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbOutput.BackColor = System.Drawing.Color.DimGray;
-            this.pbOutput.Location = new System.Drawing.Point(468, 40);
+            this.pbOutput.Location = new System.Drawing.Point(468, 66);
             this.pbOutput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbOutput.Name = "pbOutput";
-            this.pbOutput.Size = new System.Drawing.Size(363, 331);
+            this.pbOutput.Size = new System.Drawing.Size(363, 305);
             this.pbOutput.TabIndex = 0;
             this.pbOutput.TabStop = false;
             // 
-            // textBox1
+            // tbCommandLine
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(38, 348);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tbCommandLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tbCommandLine.Location = new System.Drawing.Point(38, 348);
+            this.tbCommandLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbCommandLine.Name = "tbCommandLine";
+            this.tbCommandLine.Size = new System.Drawing.Size(373, 23);
+            this.tbCommandLine.TabIndex = 1;
+            this.tbCommandLine.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // rtbInput
             // 
@@ -134,7 +142,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 23);
+            this.label2.Location = new System.Drawing.Point(468, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 8;
@@ -200,11 +208,43 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
+            // pbColor3
+            // 
+            this.pbColor3.Location = new System.Drawing.Point(804, 35);
+            this.pbColor3.Name = "pbColor3";
+            this.pbColor3.Size = new System.Drawing.Size(27, 27);
+            this.pbColor3.TabIndex = 11;
+            this.pbColor3.TabStop = false;
+            // 
+            // pbColor2
+            // 
+            this.pbColor2.Location = new System.Drawing.Point(771, 35);
+            this.pbColor2.Name = "pbColor2";
+            this.pbColor2.Size = new System.Drawing.Size(27, 27);
+            this.pbColor2.TabIndex = 11;
+            this.pbColor2.TabStop = false;
+            // 
+            // pbColor1
+            // 
+            this.pbColor1.Location = new System.Drawing.Point(738, 35);
+            this.pbColor1.Name = "pbColor1";
+            this.pbColor1.Size = new System.Drawing.Size(27, 27);
+            this.pbColor1.TabIndex = 11;
+            this.pbColor1.TabStop = false;
+            // 
+            // tColorTransition
+            // 
+            this.tColorTransition.Interval = 500;
+            this.tColorTransition.Tick += new System.EventHandler(this.tColorTransition_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 470);
+            this.Controls.Add(this.pbColor1);
+            this.Controls.Add(this.pbColor2);
+            this.Controls.Add(this.pbColor3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -217,14 +257,21 @@
             this.Controls.Add(this.btnSyntax);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.rtbInput);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbCommandLine);
             this.Controls.Add(this.pbOutput);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(859, 509);
+            this.MinimumSize = new System.Drawing.Size(859, 509);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Programming Language";
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColor1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +280,7 @@
         #endregion
 
         private PictureBox pbOutput;
-        private TextBox textBox1;
+        private TextBox tbCommandLine;
         private RichTextBox rtbInput;
         private Button btnRun;
         private Button btnSyntax;
@@ -247,5 +294,9 @@
         private Label label1;
         private OpenFileDialog openFileDialog;
         private Button btnBrowse;
+        private PictureBox pbColor3;
+        private PictureBox pbColor2;
+        private PictureBox pbColor1;
+        private System.Windows.Forms.Timer tColorTransition;
     }
 }

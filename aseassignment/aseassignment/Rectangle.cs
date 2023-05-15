@@ -10,7 +10,7 @@ namespace aseassignment
     /// <summary>
     /// The rectangle class. It inherits from the shape class. It draws the rectangle on the canvas.
     /// </summary>
-    class Rectangle : Shape
+    public class Rectangle : Shape
     {
         // The width of the rectangle.
         // The height of the rectangle.

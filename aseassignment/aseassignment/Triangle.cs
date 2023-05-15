@@ -10,7 +10,7 @@ namespace aseassignment
     /// <summary>
     /// The triangle class. It inherits from the shape class. It draws the triangle on the canvas.
     /// </summary>
-    class Triangle : Shape
+    public class Triangle : Shape
     {
         // The size of the triangle.
         int size;

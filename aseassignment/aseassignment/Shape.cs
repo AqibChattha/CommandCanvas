@@ -9,7 +9,7 @@ namespace aseassignment
     /// <summary>
     /// The parent class for all shapes. It contains the color and the x and y coordinates of the shape.
     /// </summary>
-    abstract class Shape : Shapes
+    public abstract class Shape : IShapes
     {
         // The color of the shape.
         protected Color color;

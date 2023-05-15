@@ -10,7 +10,7 @@ namespace aseassignment
     /// Parser class. It parses the input string commands.
     /// It validates the commands and returns the type and parameters required from the command.
     /// </summary>
-    internal class Parser
+    public class Parser
     {
         // The input entered by the user. It can be a single as well as multiple commands seperated by newline character.
         String input;
@@ -79,13 +79,13 @@ namespace aseassignment
                 {
                     parameters.Add(values[i]);
                 }
-                
+
                 // If the pen argument is given than take the parameter of that argument
                 if (commands.Length > 3) parameters.Add(commands[3]);
-                
+
                 // If the fill argument is given than take the parameter of that argument
                 if (commands.Length > 4) parameters.Add(commands[5]);
-                
+
                 return parameters;
             }
         }
@@ -137,8 +137,16 @@ namespace aseassignment
                                 {
                                     // Check if the parameters are of integer data type as they are cordinates.
                                     // We used try catch here as if the parameters are not of integer data type then it will throw an exception.
-                                    try { Convert.ToInt32(parameters[0]); } catch (Exception) { return false; }
-                                    if (parameters.Length == 2) try { Convert.ToInt32(parameters[1]); } catch (Exception) { return false; }
+                                    try
+                                    {
+                                        if (Form1.Instance.getValue(parameters[0]) == -1) { return false; }
+                                    }
+                                    catch (Exception) { return false; }
+                                    if (parameters.Length == 2) try
+                                        {
+                                            if (Form1.Instance.getValue(parameters[1]) == -1) { return false; }
+                                        }
+                                        catch (Exception) { return false; }
                                 }
                                 else { return false; }
                             }
@@ -178,7 +186,7 @@ namespace aseassignment
             }
             // If there is any exception then the command is not valid.
             catch (Exception) { return false; }
-            
+
             // If there is no exception and program reaches here then the command is valid.
             return true;
         }

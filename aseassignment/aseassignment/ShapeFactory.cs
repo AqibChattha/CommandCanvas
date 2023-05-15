@@ -17,7 +17,7 @@ namespace aseassignment
     /// drawto (to draw a line on the canvas), clear (to clear the canvas), etc.
     /// It also contains the methods that draw the 3 basic shapes (circle, triangle and rectangle).
     /// </summary>
-    class Canvas
+    public class ShapeFactory
     {
         // This graphic object is used to draw different shapes on the canvas. 
         Graphics g;
@@ -41,7 +41,7 @@ namespace aseassignment
         /// because we want to make the shapes inside the given picturebox.
         /// </summary>
         /// <param name="pictureBox">The instance of picturebox in which the shapes and drawing is to be drawn</param>
-        public Canvas(PictureBox pictureBox)
+        public ShapeFactory(PictureBox pictureBox)
         {
             // Set the initial position of the cursor to (0,0) cordinated on canvas (or picturebox)
             xPos = yPos = 0;
@@ -343,7 +343,7 @@ namespace aseassignment
         /// <summary>
         /// Destructor for the canvas class
         /// </summary>
-        ~Canvas()
+        ~ShapeFactory()
         {
             g.Dispose();
         }

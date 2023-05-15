@@ -9,7 +9,7 @@ namespace aseassignment
     /// <summary>
     /// The main entry point for the application. The interface for different types of shapes.
     /// </summary>
-    interface Shapes
+    interface IShapes
     {
         /// <summary>
         /// The method that draws the shape.
